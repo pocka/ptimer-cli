@@ -20,7 +20,6 @@ jobs:
         uses: actions/setup-go@v5
         with:
           go-version: 1.22.x
-          # In order to suppress "go.sum not found" warning.
           # This job does not need cache, because only `gofmt` will be used.
           cache: false
       - name: Check format with dprint
