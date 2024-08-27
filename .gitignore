@@ -7,7 +7,9 @@
 #       Use in-memory database or create on-demand for testings.
 *.ptimer
 
-# What: Node.js' dependency directory
-#  Why: Filesize is unnecessary large. Also it might include platform dependent files
-#       such as executables and caches.
-node_modules
+# What: Built executable file
+#  Why: This file is platform dependent and is a binary file.
+ptimer
+ptimer.exe
+ptimer-cli
+ptimer-cli.exe

@@ -1,8 +1,0 @@
-# SPDX-FileCopyrightText: 2024 Shota FUJI <pockawoooh@gmail.com>
-#
-# SPDX-License-Identifier: Apache-2.0
-
-# What: Built executable file
-#  Why: This file is platform dependent and is a binary file.
-ptimer
-ptimer.exe

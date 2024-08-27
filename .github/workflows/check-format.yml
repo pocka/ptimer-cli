@@ -23,37 +23,5 @@ jobs:
           # In order to suppress "go.sum not found" warning.
           # This job does not need cache, because only `gofmt` will be used.
           cache: false
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22.x"
-      - name: Setup Gleam
-        uses: erlef/setup-beam@v1
-        with:
-          otp-version: "27"
-          gleam-version: "1.4"
-      - name: Install elm-format
-        run: npm i -g elm-format
-      - name: Cache swiftformat
-        id: cache-swiftformat
-        uses: actions/cache@v4
-        with:
-          path: /home/runner/.gha_swifttools/swiftformat
-          key: ${{ runner.os }}-swiftformat
-      - name: Install swiftformat
-        if: steps.cache-swiftformat.outputs.cache-hit
-        shell: bash
-        run: |
-          echo "/home/runner/.gha_swifttools" >> $GITHUB_PATH
-      - name: Download and Install swiftformat
-        if: steps.cache-swiftformat.outputs.cache-hit != 'true'
-        shell: bash
-        run: |
-          curl -SLO https://github.com/nicklockwood/SwiftFormat/releases/download/0.54.3/swiftformat_linux.zip
-          unzip swiftformat_linux.zip
-          rm swiftformat_linux.zip
-          mkdir -p ~/.gha_swifttools
-          mv swiftformat_linux ~/.gha_swifttools/swiftformat
-          echo "/home/runner/.gha_swifttools" >> $GITHUB_PATH
       - name: Check format with dprint
         uses: dprint/check@v2.2

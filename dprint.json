@@ -1,49 +1,21 @@
 {
-	"typescript": {
-		"useTabs": true,
-		"quoteProps": "asNeeded"
-	},
 	"json": {
 		"useTabs": true
 	},
 	"markdown": {
 		"lineWidth": 100
 	},
-	"malva": {
-		"printWidth": 100,
-		"useTabs": true
-	},
-	"excludes": [
-		"web_player/node_modules",
-		"web_player/dist",
-		"web_player/elm-stuff",
-		"web_player/.parcel-cache"
-	],
 	"exec": {
 		"commands": [
 			{
-				"command": "npx elm-format --stdin",
-				"exts": ["elm"]
-			},
-			{
 				"command": "gofmt",
 				"exts": ["go"]
-			},
-			{
-				"command": "swiftformat stdin --config apple_universal/.swiftformat",
-				"exts": ["swift"]
-			},
-			{
-				"command": "gleam format --stdin",
-				"exts": ["gleam"]
 			}
 		]
 	},
 	"plugins": [
-		"https://plugins.dprint.dev/typescript-0.91.1.wasm",
 		"https://plugins.dprint.dev/json-0.19.3.wasm",
 		"https://plugins.dprint.dev/markdown-0.17.1.wasm",
-		"https://plugins.dprint.dev/exec-0.4.4.json@c207bf9b9a4ee1f0ecb75c594f774924baf62e8e53a2ce9d873816a408cecbf7",
-		"https://plugins.dprint.dev/g-plane/malva-v0.4.0.wasm"
+		"https://plugins.dprint.dev/exec-0.4.4.json@c207bf9b9a4ee1f0ecb75c594f774924baf62e8e53a2ce9d873816a408cecbf7"
 	]
 }
