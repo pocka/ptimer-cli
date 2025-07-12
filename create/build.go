@@ -17,7 +17,7 @@ import (
 	_ "modernc.org/sqlite"
 )
 
-// go:embed init.sql
+//go:embed init.sql
 var initSQL string
 
 func buildPtimerFile(data fileformat.Ptimer, basePath string, dbPath string) error {
